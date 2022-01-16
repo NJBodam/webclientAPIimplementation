@@ -42,15 +42,17 @@ public class PersonController {
         return "person with id "+id+ " deleted";
 
     }
+
     @PutMapping(path = "person/{id}")
     public String updatePerson(@PathVariable("id")int id, @RequestBody Person person){
         personService.updatePerson(person,id);
         return "person with the id of "+id+" updated";
     }
+
     @GetMapping( "/person/{id}/{subjects}")
     public ResponseEntity<ResponseData> getPersonById(@PathVariable("id")int id, @PathVariable("subjects") String subjects){
         Person person = personService.getPersonById(id);
-         ResponseData responseData = new ResponseData();
+        ResponseData responseData = new ResponseData();
 
         Subject subject = builder.build()
                 .get()

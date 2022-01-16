@@ -12,7 +12,7 @@ public class Subject {
 
     private String key;
     private String name;
-    private String subject_type;
-    private  int work_count;
+    private String subjecttype;
+    private  int workcount;
     private Object[] works;
 }
